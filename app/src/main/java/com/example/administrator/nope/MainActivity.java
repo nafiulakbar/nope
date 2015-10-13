@@ -1,5 +1,6 @@
 package com.example.administrator.nope;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         final EditText in=(EditText) findViewById(R.id.input);
         final TextView out=(TextView)findViewById(R.id.output);
         Button c=(Button) findViewById(R.id.click);
@@ -32,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
                 out.setTextColor(t2);
              String l= new StringBuilder(k).reverse().toString();
              out.setText(l);
+                Intent intent=new Intent(MainActivity.this,Main2Activity.class);
+                intent.putExtra("RVRS",l);
+                startActivity(intent);
+
             }
         });
 
